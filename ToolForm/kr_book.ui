@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kr_book</class>
+ <widget class="QWidget" name="kr_book">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>853</width>
+    <height>547</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 11pt &quot;黑体&quot;;</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>831</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton[NotTitleBarBtn=true]
+{	
+	color:white;
+	background-color:rgb(14 , 150 , 254);
+	border: 1px solid rgb(11 , 137 , 234);
+	border-radius:6px;
+}
+
+QPushButton:hover[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(44 , 137 , 255);
+	border: 1px solid rgb(11 , 137 , 234);
+}
+
+QPushButton:pressed[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(14 , 135 , 228);
+	border: 1px solid rgb(12 , 138 , 235);
+	padding-left:3px;
+	padding-top:3px;
+}
+QLineEdit
+{
+	font:12pt &quot;Microsoft YaHei&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-radius:5px;
+    border: 1px solid rgb(209 , 209 , 209);
+}
+QLineEdit:hover
+{
+    padding-bottom:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QTableWidget" name="tableWidget_book">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>821</width>
+       <height>491</height>
+      </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::DoubleClicked</set>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+    </widget>
+    <widget class="QPushButton" name="AddBtn">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>460</y>
+       <width>89</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>新增</string>
+     </property>
+     <property name="NotTitleBarBtn" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="EditBtn">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>460</y>
+       <width>89</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>修改上传</string>
+     </property>
+     <property name="NotTitleBarBtn" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QLineEdit" name="lineEdit_isbn">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>460</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>ISBN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SearchBtn">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>460</y>
+       <width>89</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查询</string>
+     </property>
+     <property name="NotTitleBarBtn" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_BookPicture">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>241</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Title">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>411</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;黑体&quot;;</string>
+     </property>
+     <property name="text">
+      <string>暂无标题</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_border">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>120</y>
+       <width>521</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Pictureborder">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>261</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="margin">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Score">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>50</y>
+       <width>221</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 15pt &quot;黑体&quot;;
+color: rgb(255, 183, 15);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_numRater">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>50</y>
+       <width>151</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 15pt &quot;黑体&quot;;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AcceptBtn">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>460</y>
+       <width>89</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>添加</string>
+     </property>
+     <property name="NotTitleBarBtn" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>120</y>
+       <width>503</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_Subheading">
+          <property name="text">
+           <string>副标题: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Author">
+          <property name="text">
+           <string>作者: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Translator">
+          <property name="text">
+           <string>译者: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Price">
+          <property name="text">
+           <string>定价: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_Press">
+          <property name="text">
+           <string>出版社: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_PressDate">
+          <property name="text">
+           <string>出版年: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_Pages">
+          <property name="text">
+           <string>页数: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_ISBN">
+          <property name="text">
+           <string>ISBN: 暂无数据</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="BackBtn">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>460</y>
+       <width>89</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>返回</string>
+     </property>
+     <property name="NotTitleBarBtn" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>layoutWidget</zorder>
+    <zorder>label_border</zorder>
+    <zorder>lineEdit_isbn</zorder>
+    <zorder>SearchBtn</zorder>
+    <zorder>label_BookPicture</zorder>
+    <zorder>label_Title</zorder>
+    <zorder>label_Pictureborder</zorder>
+    <zorder>label_Score</zorder>
+    <zorder>label_numRater</zorder>
+    <zorder>AcceptBtn</zorder>
+    <zorder>BackBtn</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

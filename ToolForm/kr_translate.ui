@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kr_translate</class>
+ <widget class="QWidget" name="kr_translate">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1170</width>
+    <height>535</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>翻译</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.950000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget[isWidget]
+{
+background-color: rgba(255, 255, 255,0.5);
+}
+QPushButton
+{	
+	color:rgb(117,117,117);
+	background-color:rgb(250,250,250);
+	border: 1px solid rgb(100,100,100);
+	border-radius:6px;
+}
+
+QPushButton:hover
+{
+	color:white;
+	background-color:rgb(90,90,90);
+	border: 1px solid rgb(100,100,100);
+}
+
+QPushButton:pressed
+{
+	color:white;
+	background-color:rgb(80,80,80);
+	border: 1px solid rgb(100,100,100);
+	padding-left:3px;
+	padding-top:3px;
+}
+QLineEdit
+{
+	font:12pt &quot;Microsoft YaHei&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-radius:3px;
+    border: 1px solid rgb(209 , 209 , 209);
+}
+QLineEdit:hover
+{
+    padding-bottom:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}</string>
+  </property>
+  <property name="isWidget" stdset="0">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>1131</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
+    <property name="spacing">
+     <number>9</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,1,1">
+      <property name="spacing">
+       <number>7</number>
+      </property>
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>4</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="UrllineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="GOButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>打开</string>
+        </property>
+        <property name="shortcut">
+         <string>Return</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="CloseBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>关闭</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QAxWidget" name="webWidget">
+      <property name="control" stdset="0">
+       <string>{8856f961-340a-11d0-a96b-00c04fd705a2}</string>
+      </property>
+      <property name="RegisterAsBrowser" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="RegisterAsDropTarget" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="Visible" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet" stdset="0">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QAxWidget</class>
+   <extends>QWidget</extends>
+   <header>qaxwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

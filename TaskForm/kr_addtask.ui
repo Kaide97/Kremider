@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kr_addTask</class>
+ <widget class="QWidget" name="kr_addTask">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>541</width>
+    <height>348</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>添加</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton[NotTitleBarBtn=true]
+{	
+	color:rgb(117,117,117);
+	background-color:rgb(250,250,250);
+	border: 1px solid rgb(100,100,100);
+	border-radius:6px;
+}
+
+QPushButton:hover[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(90,90,90);
+	border: 1px solid rgb(100,100,100);
+}
+
+QPushButton:pressed[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(80,80,80);
+	border: 1px solid rgb(100,100,100);
+	padding-left:3px;
+	padding-top:3px;
+}
+QLineEdit
+{
+	font:12pt &quot;Microsoft YaHei&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-radius:3px;
+    border: 1px solid rgb(209 , 209 , 209);
+}
+QLineEdit:hover
+{
+    padding-bottom:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}
+QTextEdit
+{
+	font:12pt &quot;Microsoft YaHei&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-radius:3px;
+    border: 1px solid rgb(100,100,100);
+}
+QTextEdit:hover
+{
+    padding-bottom:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>483</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+        <item>
+         <widget class="QDateTimeEdit" name="dateTimeEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="displayFormat">
+           <string>yyyy/MM/dd HH:mm</string>
+          </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="TaskThemeComBoBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(100,100,100);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Login/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 30px;
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>运动</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>休闲</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>工作</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>理财</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>家庭</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>尝试</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>学习</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>人际</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="DetailEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>任务内容</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,1">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="4,2,1">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1">
+          <item>
+           <widget class="QPushButton" name="SaveBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>保存</string>
+            </property>
+            <property name="shortcut">
+             <string>Return</string>
+            </property>
+            <property name="NotTitleBarBtn" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ExitBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>退出</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+D</string>
+            </property>
+            <property name="NotTitleBarBtn" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="EditExitButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>退出</string>
+          </property>
+          <property name="shortcut">
+           <string>Esc</string>
+          </property>
+          <property name="NotTitleBarBtn" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

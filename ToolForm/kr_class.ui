@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kr_class</class>
+ <widget class="QWidget" name="kr_class">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1180</width>
+    <height>787</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>K管理 GDUT</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit#accountLineEdit
+{
+	font: 10pt&quot;黑体&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    border: 1px solid rgb(209 , 209 , 209);
+}
+QLineEdit#accountLineEdit:hover
+{
+    padding-bottom:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}
+
+QLineEdit#passwordEdit
+{
+	font: 10pt &quot;黑体&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    border: 1px solid rgb(209 , 209 , 209);
+    border-top:transparent;
+}
+QLineEdit:hover#passwordEdit
+{
+    padding-top:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}
+QPushButton[NotTitleBarBtn=true]
+{	
+	color:rgb(117,117,117);
+	background-color:rgb(250,250,250);
+	border: 1px solid rgb(100,100,100);
+	border-radius:6px;
+}
+
+QPushButton:hover[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(90,90,90);
+	border: 1px solid rgb(100,100,100);
+}
+
+QPushButton:pressed[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(80,80,80);
+	border: 1px solid rgb(100,100,100);
+	padding-left:3px;
+	padding-top:3px;
+}
+
+QListWidget
+{
+border:1px solid rgb(209 , 209 , 209);
+border-radius:10px;
+color: rgb(56, 56, 56);
+font: 10pt &quot;Microsoft YaHei UI&quot;;
+background:rgba(250,250,250,0.6);
+}</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>120</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="NewTypehorizontalLayout">
+    <property name="spacing">
+     <number>7</number>
+    </property>
+    <item>
+     <widget class="QComboBox" name="NewsTpyecomboBox">
+      <property name="minimumSize">
+       <size>
+        <width>90</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>校内通知</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>校内简讯</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>招标公告</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="RefreshBtn">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>刷新</string>
+      </property>
+      <property name="NotTitleBarBtn" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QListWidget" name="NewsWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>701</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="lineWidth">
+    <number>0</number>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="dragDropMode">
+    <enum>QAbstractItemView::NoDragDrop</enum>
+   </property>
+   <property name="defaultDropAction">
+    <enum>Qt::LinkAction</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Notice_Label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>241</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/Resources/Class/Label/campusnews.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>60</y>
+     <width>441</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>250</y>
+       <width>381</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,1">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="8,8,2,4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="accountLineEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>学号</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="passwordEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="inputMethodHints">
+           <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="placeholderText">
+           <string>密码</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,2">
+          <item>
+           <widget class="QLineEdit" name="VclineEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{
+	font: 10pt &quot;黑体&quot;;
+    background:white;
+    padding-left:5px ;
+    padding-top:1px ;
+    border-radius:3px;
+    border: 1px solid rgb(209 , 209 , 209);
+    border-top:transparent;
+}
+QLineEdit:hover
+{
+    padding-top:0px ;
+    border: 1px solid rgb(21 , 131 , 221);
+}</string>
+            </property>
+            <property name="placeholderText">
+             <string>验证码</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="VcLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="0">
+        <item>
+         <widget class="QPushButton" name="LoginBtn">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>登录</string>
+          </property>
+          <property name="shortcut">
+           <string>Return</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="NotTitleBarBtn" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="SchoolLogolabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>180</y>
+       <width>361</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/Resources/Class/schoolLogo.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Tipslabel">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>460</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(127, 127, 127);</string>
+     </property>
+     <property name="text">
+      <string>Tips:新系统</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QListWidget" name="ClassNoticeWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>411</width>
+       <height>611</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::NoDragDrop</enum>
+     </property>
+     <property name="defaultDropAction">
+      <enum>Qt::MoveAction</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Semlabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>31</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/Resources/Class/Label/semzc.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>261</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="ClassChoosehorizontalLayout" stretch="10,4,0">
+      <property name="spacing">
+       <number>1</number>
+      </property>
+      <item>
+       <widget class="QComboBox" name="SemcomboBox">
+        <property name="minimumSize">
+         <size>
+          <width>51</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 18px;
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>2015 上学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2015 下学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2016 上学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2016 下学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2017 上学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2017 下学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2018 上学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2018 下学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2019 上学期</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2019 下学期</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="WeekcomboBox">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>6</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>7</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>8</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>9</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>11</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>12</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>13</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>14</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>15</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>17</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>18</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>19</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>20</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ResetClassBtn">
+        <property name="minimumSize">
+         <size>
+          <width>51</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>回到当天课表</string>
+        </property>
+        <property name="text">
+         <string>重置</string>
+        </property>
+        <property name="NotTitleBarBtn" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>ResetClassBtn</zorder>
+     <zorder>WeekcomboBox</zorder>
+     <zorder>SemcomboBox</zorder>
+    </widget>
+    <widget class="QLabel" name="ClassList_Label">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>11</y>
+       <width>151</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/Resources/Class/Label/classlist.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QListWidget" name="GPAlistWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>411</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="EnglishLevelGPAlistWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>570</y>
+       <width>411</width>
+       <height>141</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>411</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1">
+      <item>
+       <widget class="QLabel" name="GPAlabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 11pt ;</string>
+        </property>
+        <property name="text">
+         <string>绩点:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="GradeSemcomboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>全部</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="Tiplabel">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>120</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(127, 127, 127);</string>
+   </property>
+   <property name="text">
+    <string>Tips:双击新闻可跳转至网页查看详情</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="NextPageBtn">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>90</y>
+     <width>51</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>成绩</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+   <property name="NotTitleBarBtn" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="LastPageBtn">
+   <property name="geometry">
+    <rect>
+     <x>1048</x>
+     <y>90</y>
+     <width>51</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>课表</string>
+   </property>
+   <property name="text">
+    <string>←</string>
+   </property>
+   <property name="NotTitleBarBtn" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>stackedWidget</zorder>
+  <zorder>layoutWidget_2</zorder>
+  <zorder>NewsWidget</zorder>
+  <zorder>Notice_Label</zorder>
+  <zorder>Tiplabel</zorder>
+  <zorder>NextPageBtn</zorder>
+  <zorder>LastPageBtn</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

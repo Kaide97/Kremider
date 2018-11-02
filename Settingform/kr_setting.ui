@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kr_setting</class>
+ <widget class="QWidget" name="kr_setting">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>504</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>设置</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.960000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton[NotTitleBarBtn=true]
+{	
+	color:rgb(117,117,117);
+	background-color:rgb(250,250,250);
+	border: 1px solid rgb(100,100,100);
+	border-radius:6px;
+}
+
+QPushButton:hover[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(90,90,90);
+	border: 1px solid rgb(100,100,100);
+}
+
+QPushButton:pressed[NotTitleBarBtn=true]
+{
+	color:white;
+	background-color:rgb(80,80,80);
+	border: 1px solid rgb(100,100,100);
+	padding-left:3px;
+	padding-top:3px;
+}</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>381</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>画面</string>
+      </property>
+      <widget class="QLabel" name="OpNameLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>界面透明度</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>55</y>
+         <width>251</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1">
+        <item>
+         <widget class="QSlider" name="OpSlider">
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="pageStep">
+           <number>10</number>
+          </property>
+          <property name="value">
+           <number>50</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="OpStateLabel">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,6,6,6">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ExitBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>退出</string>
+        </property>
+        <property name="NotTitleBarBtn" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="SaveBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>保存</string>
+        </property>
+        <property name="NotTitleBarBtn" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ResetBtn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>重置</string>
+        </property>
+        <property name="NotTitleBarBtn" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="UpdateBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>450</y>
+     <width>89</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>更新</string>
+   </property>
+   <property name="NotTitleBarBtn" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AboutBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>370</y>
+     <width>89</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>关于</string>
+   </property>
+   <property name="NotTitleBarBtn" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Back2LoginBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>410</y>
+     <width>89</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>注销</string>
+   </property>
+   <property name="NotTitleBarBtn" stdset="0">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Versionlabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>470</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(117,117,117);</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;v0.6.5.5 2018/4/29&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="TipsLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>341</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(149, 149, 149);</string>
+   </property>
+   <property name="text">
+    <string>Tips:如果喜欢的球队在这里没有,可以联系我添加
+数据来源:懂球帝</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>210</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,3">
+    <item>
+     <widget class="QLabel" name="ClubChooseLabel">
+      <property name="text">
+       <string>俱乐部关注:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="TeamcomboBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>300</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,3">
+    <item>
+     <widget class="QLabel" name="ColorChooseLabel">
+      <property name="text">
+       <string>标签主色调:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ColorcomboBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Orange</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pink</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>340</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,3">
+    <item>
+     <widget class="QLabel" name="BackgroundPixChooseLabel">
+      <property name="text">
+       <string>主界面背景:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="BackgroundcomboBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>自选</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>日落黄昏</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>云雾缭绕</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>黑白沙漠</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>牛仔剪影</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>炫酷夜店</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>冰山脚下</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>黑白旧故事</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>人烟罕至</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>水天倒影</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>黑白照片</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>380</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,3">
+    <item>
+     <widget class="QLabel" name="FontChooseLabel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>字体:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFontComboBox" name="fontComboBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox
+{
+    background:rgba(250,250,250,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+ QComboBox::down-arrow {
+	image: url(:/Resources/Class/combobox/downarrow.png);
+ }
+QComboBox::drop-down {
+     subcontrol-origin:paddind;  
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 3px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 3px;
+ }
+QComboBox:hover
+{
+    background:rgba(240,240,240,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+}
+QComboBox:pressed
+{
+    background:rgba(230,230,230,0.7);
+	border: 1px solid rgb(209 , 209 , 209);
+	border-radius:3px;
+    padding-left:3px;
+    padding-top:3px;
+}</string>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="insertPolicy">
+       <enum>QComboBox::NoInsert</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
